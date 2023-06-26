@@ -1,0 +1,35 @@
+
+
+      1. HTML
+            - Các thẻ cơ bản
+            - Table/Form
+            - Các thẻ bố cục nội dung
+  
+        2. Css
+            - Tương tác
+            - Các bộ chọn
+            - Thuộc tính thông dụng
+            - Hệ màu
+            - Đơn vị
+            - Nâng cao : Animation , Box , Transform ,...
+            - Responsive Design
+ 
+        3. Js
+            - Syntax:
+            - Biến, Hằng, Toán tử, Toán hạng, ....
+            - Input, Output
+            - Control: rẽ nhánh (if else , switch case),
+                vòng lặp(for , do while),
+                lệnh nhảy(break, continue, return)
+            - Mảng
+            - Hàm
+            - Object/ String
+            - DOM
+ 
+        4. Jquery
+            - Cách sử dụng
+ 
+        5. Bootstrap:  - Cách sử dụng
+	===========================> web site 10 webpage(2weeks)
+	
+	
