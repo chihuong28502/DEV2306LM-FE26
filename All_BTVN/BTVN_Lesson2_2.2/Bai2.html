@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<style>
+    .container {
+        width: 450px;
+        background-color: #cdcdcd;
+        font-size: 15px;
+    }
+    
+    .head {
+        text-align: center;
+    }
+    
+    tr>td:first-child {
+        width: 38%;
+    }
+    
+    p {
+        margin: 0;
+    }
+    
+    .tag_p:hover {
+        background-color: blue;
+    }
+    
+    .tag_p {
+        margin-bottom: 1px;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .show {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>Phiếu tham gia trương trình khuyến mãi</h3>
+        </div>
+        <div class="">
+            <table width="100%" border="" cellspacing="0" cellpadding="">
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input style="width: 90%;" type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td><input style="width: 70%;" type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td><input type="text" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>Phái</td>
+                    <td>
+                        <form action="">
+                            <input type="radio" name="Nam" id="Nam">Nam
+                            <input type="radio" name="Nữ" id="Nữ">Nữ
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nghề nghiệp</td>
+                    <td>
+                        <select name="" id=""><option value="">Giáo viên</option>
+                            <option value="">Bác sĩ</option><option value="">Kỹ sư</option><option value="">Khác</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chọn sản phẩm tham gia</td>
+                    <td>
+                        <div class="" style="background-color: #fff; width: 40%;">
+                            <p class="tag_p">Kem đánh răng</p>
+                            <p class="tag_p">Bột giặt</p>
+                            <p class="tag_p">Dầu gội</p>
+                            <p class="tag_p">Sữa tắm</p>
+                    </td>
+                    </div>
+                </tr>
+                <tr>
+                    <td>Số người dự đoán tham gia</td>
+                    <td>
+                        <input type="text" name="" id="">
+                    </td>
+                </tr>
+                <tr>
+
+                    <td colspan="2" align="center">
+                        <button class="btn-show">Đồng ý</button>
+                    </td>
+                </tr>
+                <tr class="show">
+
+                    <td colspan="2" align="center">
+                        <p>Đăng ký thành công!!!</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        const show = document.querySelector('.show');
+        const btnShow = document.querySelector('.btn-show');
+        btnShow.onclick = () => {
+            show.style.display = 'table-row';
+        }
+    </script>
+</body>
+
+</html>
