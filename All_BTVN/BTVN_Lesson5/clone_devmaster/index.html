@@ -20,7 +20,7 @@
 
 <body>
         <header class="header">
-            <div class= "container head d-flex align-items-center justify-content-between">
+            <div class= "container flex-wrap head d-flex align-items-center justify-content-between">
                 <div class="logo">
                     <a class="none-hover-a text-decoration-none d-flex align-items-center" href="">
                         <img width="100px" height="auto" src="https://devmaster.edu.vn/images/logo.png" alt="">
@@ -42,19 +42,45 @@
                             <a class="hover-white none-hover-a" href="">TRANG CHỦ</a>
                         </li>
                         <li class="menu-main-item">
-                            <a class="hover-white none-hover-a" href="">CÁC KHÓA ĐÀO TẠO</a>
+                            <a class="hover-white none-hover-a" href="">CÁC KHÓA ĐÀO TẠO
+                                <i class="fa-solid fa-caret-down caret"></i>
+                            </a>
                         </li>
                         <li class="menu-main-item">
                             <a class="hover-white none-hover-a" href="">LẬP TRÌNH CHO TRẺ EM</a>
                         </li>
                         <li class="menu-main-item">
-                            <a class="hover-white none-hover-a" href="">DỊCH VỤ</a>
+                            <a class="hover-white none-hover-a" href="">DỊCH VỤ
+                                <i class="fa-solid fa-caret-down caret"></i>
+                                <ul  class="width-list-service menu-sub">
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Đào tạo theo như cầu </a>
+                                    </li>
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Cung cấp thiết bị - Phần mềm </a>
+                                    </li>
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Tư vấn - Thiết kế mạng hạ tầng </a>
+                                    </li>
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Tư vấn - Triển khai dịch vụ mạng </a>
+                                    </li>
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Tư vấn - Tư vấn, triển khai giám sát hệ thống  </a>
+                                    </li>
+                                    <li class="menu-sub-item">
+                                        <a class="menu-sub-link none-hover-a" href="">Thực tập dự án</a>
+                                    </li>
+                                </ul>
+                            </a>
                         </li>
                         <li class="menu-main-item">
                             <a class="hover-white none-hover-a" href="">LỊCH SỬ KHAI GIẢNG</a>
                         </li>
                         <li class="menu-main-item ">
-                            <a class="hover-white none-hover-a" href="">TIN TỨC</a>
+                            <a class="hover-white none-hover-a" href="">TIN TỨC
+                                <i class="fa-solid fa-caret-down caret"></i>
+                            </a>
                                 <ul  class="menu-sub ">
                                     <li class="menu-sub-item">
                                         <a class="menu-sub-link none-hover-a" href=""> Tin tức và sự kiện </a>
@@ -120,10 +146,12 @@
             </div>
         </section>
         <section class="content  " >
-            <div class=" pd-t-b-50">
+            <div class=" pd-t-b-50 container-fluid bgc-content-1">
                 <div class="bgr content-1 container ">
-                    <div class="content-title d-flex justify-content-center">
-                        <p>CÁC KHÓA HỌC CHUYÊN ĐỀ</p>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center content-title">
+                            <p>CÁC KHÓA HỌC <label class="cl-red" for="">CHUYÊN ĐỀ</label></p>
+                        </div>
                     </div>
                     <div class="content-1-list pdtb-32px row mt-50 wrap">
                         <a class="content-1-item col-3">
@@ -141,10 +169,16 @@
                     </div>
                 </div>
             </div>
-            <div class="content-2 mt-50 container">
-                <div class="content-title d-flex justify-content-center mb-5">
-                    <p>LỊCH KHAI GIẢNG</p>
-                </div>
+            <div class="content-2 container pd-t-b-50 ">
+                    <div class="row">
+                        <div class="col-12 content-title d-flex justify-content-center">
+                            <p>TẠI SAO CHỌN <label class="cl-red" for="">DEVMASTER</label></p>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-6"></div>
+                    </div>
             </div>
 
         </section>

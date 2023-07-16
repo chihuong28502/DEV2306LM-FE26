@@ -11,7 +11,7 @@
 }
 .contact-tel{
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text-color);
     font-weight: 500;
     padding: 16px;
@@ -23,12 +23,15 @@
     color: red;
 }
 .text-logo{
+    color: #0e2970;
     margin-left: 4px;
+    letter-spacing: -1.5px!important;
 }
 .text-logo-bottom{
     font-size: 1.7rem;
     margin-bottom: 2px;
     font-weight: 300;
+    color: #1e87f0;
 }
 .text-logo-top{
     font-size: 1.7rem;
@@ -40,6 +43,8 @@
     box-shadow: 0px 5px 31px -6px rgba(0,0,0,0.75);
 }
 .menu-main-item{
+    display: flex;
+    align-items: center;
     padding: 16px;
     position: relative;
 }
@@ -61,6 +66,7 @@
     margin: 2px 0;
     position: relative;
 }
+
 .menu-sub{
     z-index: 2;
     position: absolute;
@@ -138,7 +144,6 @@ input[name="bottom"] {
 }
 
 .slides {
-    /* position: relative; */
     width: 500%;
     height: 100%;
     display: flex;
@@ -185,6 +190,7 @@ input[name="bottom"] {
     border-radius: 8px;
 }
 .content-1-item{
+    
     padding: 16px;
     cursor: pointer;
     
@@ -199,5 +205,10 @@ input[name="bottom"] {
     width: 100%;
     border-radius: 16px
 }
+/*  */
+/*  */
 .content-2{
+    /* background:linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1)),url(https://devmaster.edu.vn/images/modal_header_bg.jpg); */
+    
+    padding-bottom: 100px;
 }
