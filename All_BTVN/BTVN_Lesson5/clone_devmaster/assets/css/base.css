@@ -94,6 +94,7 @@ html {
 
 .none-hover-a:hover{
     text-decoration: none;
+    color: #007bff;
 }
 
 .pd-none{
@@ -107,3 +108,60 @@ html {
 .content-title{
     font-size: 2.5rem;
 }
+@keyframes ring {
+    0%{
+        transform: rotate(0);
+    } 
+    2%{
+        transform: rotate(-20deg);
+    }
+    5%{
+        transform: rotate(10deg);
+
+    }
+    7%{
+        transform: rotate(-20deg);
+
+    }
+    9%{
+        transform: rotate(10deg);
+
+    }
+    11%{
+        transform: rotate(-20deg);
+
+    }
+    13%{
+        transform: rotate(10deg);
+
+    }
+    20%,100%{
+        transform: rotate(0);
+
+    }
+    
+}
+@keyframes skew {
+    0%{
+        transform: transition(1deg);
+    }
+    50%{
+        transform: transition(-1deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+    
+}
+.pd-t-b-50{
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+.mt-50{
+    margin-top: 50px;
+}
+.pdtb-32px{
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+

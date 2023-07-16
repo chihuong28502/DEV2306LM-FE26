@@ -16,7 +16,9 @@
     font-weight: 500;
     padding: 16px;
 }
-
+.contact-tel i{
+    animation: ring 1.5s ease infinite;
+}
 .contact-tel:hover{
     color: red;
 }
@@ -107,7 +109,7 @@
 
 .navigation {
     position: absolute;
-    bottom: 16px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -176,19 +178,26 @@ input[name="bottom"] {
 
 /* content */
 .content{
-   margin-top: 50px;
 }
+.wrap{
 
+    background-color: #efeeed;
+    border-radius: 8px;
+}
 .content-1-item{
     padding: 16px;
     cursor: pointer;
     
 }
+.content-1-item img:hover{
+    box-shadow: 0px 8px 30px 4px rgba(0,0,0,.4);
+    transform:scale(1.05) translateY(-5%) ;
+}
 .content-1-item img{
+    transition: all ease 0.3s;
     box-shadow: 0px 8px 13px -2px rgba(0,0,0,0.75);
-width: 100%;
-border-radius: 16px
+    width: 100%;
+    border-radius: 16px
 }
 .content-2{
-    margin-top: 50px;
 }
