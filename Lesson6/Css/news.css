@@ -50,12 +50,13 @@
     font-size: 0.8rem;
 }
 /* body */
-.new-page{
+.new-page,.contact{
     margin-top: 5rem;
     margin-bottom: 1rem;
     background: url(http://acatea.vn/Content/images/images/tin-tuc/background-tintuc.png)  no-repeat;
     background-size: cover;
 }
+
 
 
 .new-page-content{
@@ -121,10 +122,45 @@
     margin-left: 6rem;
 }
 .footer-item{
-    /* margin-bottom: rem; */
+    margin-bottom: 0.2rem;
     font-size: 0.85rem;
 }
 .footer-item h3{
     font-size: 1.2rem;
     margin-bottom: 1.6rem;
+}
+/* contact */
+.contact{
+    margin-top: 8rem;
+}
+.bgr-contact-form{
+    background: url(http://acatea.vn/Content/images/images/lien-he/banner.jpg)  no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding-bottom: 7rem;
+}
+.form-contact{
+    margin-left: 70%;
+}
+.wrap-input{
+    width: 100%;
+    margin-top: 1rem;
+}
+.wrap-input input{
+    font-size: 0.8rem;
+    border: 0.1rem solid #899a29;
+    color: #899a29;
+    outline: none;
+    width: 100%;
+    padding: 0.5rem 0.9rem;
+}
+.form-contact button{
+    margin: 1rem 0;
+    border: 0.07rem solid #899a29;
+    background-color: #899a29;
+    width: 6.2rem;
+    height: 2.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
 }

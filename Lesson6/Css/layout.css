@@ -65,6 +65,14 @@ html{
     .menu-right{
         width: 10%;
     }
+    /* contact */
+    .form-contact{
+        width: 90%!important;
+        margin-left: 10%!important;
+    }
+    .bgr-contact-form{
+        padding-bottom: 0!important;
+    }
 }
 @media only screen and (max-width: 600px){
     .news-item{
