@@ -1,15 +1,19 @@
 .header{
     position: relative;
 }
+.bgc-header{
+    background-color: #fff;
+
+}
 .menu{
     width: 80%;
     margin: auto;
     position: fixed;
     align-items: center;
+    background-color: #fff;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
 }
 .menu-left{
 
