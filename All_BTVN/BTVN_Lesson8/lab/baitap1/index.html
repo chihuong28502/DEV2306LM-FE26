@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Register</title>
+</head>
+<style>
+    div{
+        margin-top: 12px;
+    }
+</style>
+<body>
+    
+    <div class="">
+        <label for="">Name:</label>
+        <input type="text" name="txtUserName" id="txtUserName"><br>
+        <label for="" id="noticeName"></label>
+    </div>
+    <div class="">
+        <label for="">Pass:</label>
+        <input type="password" name="txtPass" id="txtPass"><br>
+        <label for="" id="noticePass"></label>
+    </div>
+    <div class="">
+        <label for="">Email:</label>
+        <input type="email" name="txtEmail" id="txtEmail">
+        <br>
+        <label for="" id="noticeEmail"></label>
+    </div>
+    <div class="">
+        <label for="">Tel:</label>
+        <input type="tel" name="txtTel" id="txtTel">
+        <br>
+        <label for="" id="noticeTel"></label>
+    </div>
+    <div class="">
+        <button  onclick="checkPass(), checkEmail() , checkTel(),checkUser() ">Sign in</button>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
