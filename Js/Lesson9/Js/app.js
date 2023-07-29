@@ -203,7 +203,7 @@ function setPageNews(arr,pageNumber){
         setView(arr[i]);
     }
 }
-changePageNumber(4);
+changePageNumber(1);
 function changePageNumber(pageNumber){
     setPageNews(listNews, pageNumber)
 }
@@ -213,7 +213,7 @@ function setPage(i){
     // render HTML
     var Page = `
         <li>
-            <a  class="news-page-number" id ="page-number-${i}" onclick="clickPageNumbers()">${i}</a>
+            <a  class="news-page-number" id ="page-number-${i}" onclick="changePageNumber(${i})">${i}</a>
         </li>
     `
     $('.news-page-list-number').append(Page);
@@ -241,18 +241,6 @@ function setPageNew(){
     }
 }
 setPageNew()
-
-function clickPageNumbers(){
-    
-    for(var i= 0 ; i<=listPages.length-1; i++){
-        var indexPage = document.getElementById(`page-number-${listPages[i]}`);
-        if(indexPage.content == listPages[i]){
-            changePageNumber(listPages[i]);
-        }
-        console.log(indexPage)
-    }
-}
-clickPageNumbers()
 
 
 
