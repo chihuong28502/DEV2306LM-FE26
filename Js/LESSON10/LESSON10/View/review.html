@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+</head>
+<body>
+    <pre>
+        JS basic :  biến - var
+                    mảng - array
+                    cấu trúc: for , if-else
+                    đối tượng: object
+                    hàm - function
+            * khái niệm: 
+            * cách khai báo => cách sử dụng
+            I, biến:
+                - var x = 10;
+                - var y = 100;
+                - var sum = x + y;
+                console.log("tổng là: ", sum);
+
+                if(x == 10){
+                    ... thực hiện nếu x bằng 10 ...
+                } else{
+                    ... thực hiện nếu x khác 10 ...
+                }
+            II, Mảng : array 
+                định nghĩa: tập hợp các phần tử (bất kỳ) ngăn cách bởi dấu ,
+                tính chất : đánh số thứ tự từ 0 cho đến độ dài trừ một 
+                            tương tác với các phần tử qua số thứ tự
+                                <!-- <tên_mảng>[số_thứ_tự]
+                                    vd: var arr = [1 , 2];
+                                        arr[0] ===> lấy ra giá trị phần tử có stt là 0
+                                        arr[0] = 10 => gán phần tử có stt = 0 mang giá trị 10
+                                -->
+                áp dụng:
+                    for(let i = 0 ; i < arr.lenght ; i++){
+                        debbuger;
+                        arr[i]  <=> vòng lặp đầu tiên: arr[0];
+                                <=> vòng lặp thứ 2: arr[1];
+                    }
+            
+            III, Đối tượng : object 
+            var obj = {
+                thuộc_tính_1 : "dev",
+                thuộc_tính_2 : "js"
+            };
+            .....
+            obj.thuộc_tính_thứ_n = "thêm thuộc tính n";
+
+            * cách sử dụng: 
+            <!-- truy cập vào thuộc tính: <tên_object>.<tên_thuộc_tính> 
+            -->
+
+            IV, Hàm : function 
+                Khái niệm
+                Khai báo : 
+                Cách sử dụng: 
+                    <!-- <tên_hàm_đã_được_khai_báo>(<danh_sách_các_tham_số_đầu_vào_nếu_có) -->
+                *) lưu ý với phạm vi của một biến : cục bộ - toàn cục 
+            
+            V, Vòng lặp 
+                <!-- for(<biến_để_kiểm_tra>; <điều_kiện> ; <hành_động_thực_thi>) {
+                    ... thân for ...    
+                }
+                    b1: khởi chạy <biến_để_kiểm_tra>
+                    b2: kiểm tra  <điều_kiện> 
+                                    - true : 1, thực thi thân for 
+                                             2, thực thi <hành_động_thực_thi>
+                                             3, quay trở về đầu bước 2
+                                    - false: dừng vòng for
+                -->
+
+            
+            VI, triển khai với DOM => document
+            VI, jquery : thư viện được xây dựng từ javascript
+
+            
+
+
+    </pre>
+
+
+
+</body>
+</html>

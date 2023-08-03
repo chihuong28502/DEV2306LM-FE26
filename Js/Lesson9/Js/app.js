@@ -62,7 +62,7 @@ var listNews = [
     },
     {
         id : 11,
-        title: "Văn hóa uống trà của người Việt 11 11",
+        title: "Văn hóa uống trà của người Việt 11",
         content : "Văn hóa uống trà của người Việt là một phần không thể thiếu trong đời sống và văn hoá Việt Nam. Nó không chỉ....",
         image : "../Images/x.png"
     },
@@ -159,7 +159,6 @@ var listNews = [
         content : "Văn hóa uống trà của người Việt là một phần không thể thiếu trong đời sống và văn hoá Việt Nam. Nó không chỉ....",
         image : "../Images/x.png"
     }
-    
 ]
 
 function setView(obj){
@@ -203,9 +202,8 @@ function setPageNews(arr,pageNumber){
         setView(arr[i]);
     }
 }
-changePageNumber(1);
 function changePageNumber(pageNumber){
-    setPageNews(listNews, pageNumber)
+    setPageNews(listNews, pageNumber);
 }
 
 // 
@@ -213,38 +211,19 @@ function setPage(i){
     // render HTML
     var Page = `
         <li>
-            <a  class="news-page-number" id ="page-number-${i}" onclick="changePageNumber(${i})">${i}</a>
+            <a  class="news-page-number" onclick="changePageNumber(${i})">${i}</a>
         </li>
     `
     $('.news-page-list-number').append(Page);
+    // page start every time
 }
-var listPages = [];
-function getPageNumbers(){
+
+function showPageNews(){
+    changePageNumber(1);
     var cal = lengthListNews / pageSize ;
-    if(lengthListNews % pageSize ==0){
-        for(var i=1 ; i<=cal;i++){
-            listPages.push(i);
-        }
-    }else{
-        for(var i=1 ; i<=Math.floor(cal +1);i++){
-            listPages.push(i);
-        }
-    }
-    return listPages;
-}
-getPageNumbers()
-function setPageNew(){
     // loop show html
-    for(let i= 1 ; i<=listPages.length; i++){
-        setPage([i]);
-
-    }
+        for(let i= 1 ; i<=Math.ceil(cal); i++){
+            setPage(i);
+        }
 }
-setPageNew()
-
-
-
-
-
-
-
+showPageNews()

@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+html{
+    font-size: 20px;
+}
+.d-flex{
+    display: flex;
+}
+.w-23{
+    width: 23%;
+}
+
+.w-100{
+    width: 100%;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.border-1{
+    padding: 1.5rem;
+    border: 1px solid #000;
+}
+#xoa{
+    display: none;
+}
