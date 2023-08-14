@@ -38,7 +38,7 @@ var listProduct = [
 ]
 function renderHtml(obj){
     var item= `
-        <div class="item border-1 id-${obj.id}">
+        <div class="item border-1 id-${obj.id}" data-id="${obj.id}">
             <div class="d-flex justify-between" id="product-${obj.id}">
                 <div class="image-item w-23">
                     <img class="w-100" src="${obj.Image}" alt="">
@@ -64,16 +64,16 @@ function handleShowHtml(){
     for(var i=0; i<listProduct.length; i++){
         renderHtml(listProduct[i]);
     }
-    handleSumPrice()
+    handleSumPrice(listProduct)
 }
 handleShowHtml()
-function handleSumPrice(){
+function handleSumPrice(arr){
     var sum = 0 ;
     var price = 0;
     var quantity =0;
     var total = 0;
     
-    for(let i =1 ; i <= listProduct.length; i++){
+    for(let i =1 ; i <= arr.length; i++){
         quantity = document.querySelector("#product-quantity-"+ i).textContent;
         price = document.querySelector("#product-price-"+ i).attributes.getNamedItem("data-price").value;
         priceView = document.querySelector("#product-price-"+ i).textContent;     
@@ -98,21 +98,27 @@ $('.add-1').click(function(){
         quantity = parseInt(quantity) + 1;
     }
     $(this).siblings('span').text(quantity);
-    handleSumPrice();
+    handleSumPrice(listProduct);
 })
 
 $('.sub-1').click(function(){
     var quantity = $(this).siblings('span').text(); // quantity = 0
-    
+    var selectParentItem = this.parentElement.parentElement.parentElement;
+    var select = selectParentItem.attributes.getNamedItem("data-id").value;
     if((parseInt(quantity) < 1)){
-        var selectParentItem = this.parentElement.parentElement.parentElement;
-        selectParentItem.style.display = 'none';
+        listProduct = listProduct.filter(function(x){
+
+            return x.id != select;
+        });
+        $('.list-item').html("");
+        handleShowHtml()
+        handleSumPrice(listProduct)
     }else{
         quantity =(parseInt(quantity) - 1)
     }
-    // quantity = (parseInt(quantity) < 1) ? 0 : (parseInt(quantity) - 1) ;
+    
     $(this).siblings('span').text(quantity);
-    handleSumPrice();
+    handleSumPrice(listProduct);
 
 })
 
