@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import App from '../App';
 class Control extends Component {
   constructor (props) {
     super(props);
@@ -15,13 +14,15 @@ class Control extends Component {
     students.map((student,index)=>{
       if(student.studentName.toLowerCase().includes(this.state.name.toLowerCase()))
       this.state.arr.push(student)
-          this.setState(prevState => ({
-            arr: [...prevState.arr,student]
-          }))
-
-          console.log(this.state.arr)
+          // this.setState.arr(prevState => ({
+          //   arr: [...prevState.arr,student]
+          // }))
           this.setState({arr:[]})
-    })
+          return this.state.arr
+    }
+    )
+
+    console.log(this.state.arr)
   }
   handleChange = (e)=>{
     this.setState({
