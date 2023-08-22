@@ -1,0 +1,8 @@
+cấu trúc ứng dụng react js 
+jsx transform.tools
+Component 
+-function Component
+-class Component
+4. props => trao đổi dữ liệu giữa các Component
+5. state là đối tượng quản lí dữ liệu trong class Component
+6. vòng đời của Component
