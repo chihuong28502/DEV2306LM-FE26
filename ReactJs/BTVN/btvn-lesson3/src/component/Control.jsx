@@ -4,40 +4,33 @@ class Control extends Component {
     super(props);
     this.state={
       name: '',
-      arr: [],
-      value: ''
+      arr: []
     }
   }
 
-  handleSearch =()=>{
-    let {students} = this.props;
-    students.map((student,index)=>{
-      if(student.studentName.toLowerCase().includes(this.state.name.toLowerCase()))
-      this.state.arr.push(student)
-          // this.setState.arr(prevState => ({
-          //   arr: [...prevState.arr,student]
-          // }))
-          this.setState({arr:[]})
-          return this.state.arr
-    }
-    )
-    this.props.parentCallback(this.state.arr)
-    console.log(this.state.arr)
-  }
   handleChange = (e)=>{
     this.setState({
-      name : e.target.value,
-    })
-    
+      name : e.target.value
+    })}
+  handleSearch =()=>{
+    let {students} = this.props;
+    students.map(student=>{
+      if(student.studentName.toLowerCase().includes(this.state.name.toLowerCase()))
+      this.state.arr.push(student)
+    console.log(this.state.arr)
+  })
+  this.setState({arr:[]})
+    this.props.parentCallback(this.state.arr)
+    console.log(this.state.arr)
   }
   render() {
     return (
       <div className='text-center mt-5'>
-        <input type="text" onChange={this.handleChange}/>
-        <button onClick={this.handleSearch}
-          
+        <input type="text" 
+          onChange={this.handleChange}/>
+        <button 
+          onClick={this.handleSearch}
         >Tìm kiếm</button>
-        {/* <App onChangData= {this.state.arr}/> */}
       </div>
     );
   }
