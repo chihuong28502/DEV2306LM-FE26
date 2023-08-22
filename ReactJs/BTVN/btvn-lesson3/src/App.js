@@ -12,14 +12,14 @@ class App extends Component {
         { studentId: "SV003", studentName: "Đỗ Văn C", age: 19 },
         { studentId: "SV004", studentName: "Hồ Văn D", age: 19 },
         { studentId: "SV005", studentName: "Hồ Văn A", age: 20 },
-        // { studentId: "SV006", studentName: "Tạ Hữu A", age: 20 },
-        // { studentId: "SV007", studentName: "Nguyễn Văn F", age: 20 },
+        { studentId: "SV006", studentName: "Tạ Hữu A", age: 20 },
+        { studentId: "SV007", studentName: "Nguyễn Văn F", age: 20 },
       ]
     }
   }
-  handleChange = (data) =>{
-    this.setState({
-      name1: data
+  callbackFunction = (childData) => {
+    this.setState({ 
+      students: childData
     })
   }
   // this.state = {}
@@ -29,7 +29,9 @@ class App extends Component {
     // console.log(this.props)
     return (
       <div>
-        <Control students = {this.state.students}/>
+        <Control 
+          parentCallback={this.callbackFunction}
+        students = {this.state.students}/>
         <ListStudent renderStudents = {this.state.students}/>
         <button onClick={this.handleChange}>handleChange</button>
       </div>

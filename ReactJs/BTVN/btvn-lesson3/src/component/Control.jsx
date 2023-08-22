@@ -21,20 +21,22 @@ class Control extends Component {
           return this.state.arr
     }
     )
-
+    this.props.parentCallback(this.state.arr)
     console.log(this.state.arr)
   }
   handleChange = (e)=>{
     this.setState({
       name : e.target.value,
     })
-
+    
   }
   render() {
     return (
       <div className='text-center mt-5'>
         <input type="text" onChange={this.handleChange}/>
-        <button onClick={this.handleSearch}>Tìm kiếm</button>
+        <button onClick={this.handleSearch}
+          
+        >Tìm kiếm</button>
         {/* <App onChangData= {this.state.arr}/> */}
       </div>
     );
