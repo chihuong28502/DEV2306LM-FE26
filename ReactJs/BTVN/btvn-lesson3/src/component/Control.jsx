@@ -36,14 +36,7 @@ class Control extends Component {
   }
 }
 
-export default Control;
-
-
-
-
-
-
-
+export default Control
 
 
 // import React, { useState } from 'react'
