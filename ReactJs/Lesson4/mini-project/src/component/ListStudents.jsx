@@ -5,9 +5,9 @@ class ListStudents extends Component {
 
   render() {
     let {renderStudents} = this.props;
-    let elementStudent = renderStudents.map((student,index)=>
-      <Student key={index}  renderStudent = {student} stt= {index +1 }/>
-    )
+    // let elementStudent = renderStudents.map((student,index)=>
+    //   <Student key={index}  renderStudent = {student} stt= {index +1 }/>
+    // )
     return (
       <div className="card-body">
         <h3 className="card-title">Danh sách sinh viên</h3>
@@ -24,7 +24,11 @@ class ListStudents extends Component {
               </tr>
             </thead>
             <tbody>
-              {elementStudent}
+              {
+                renderStudents.map((student,index)=>
+                <Student key={index}  renderStudent = {student} stt= {index +1 }/>
+                )
+              }
             </tbody>
           </table>
         </div>

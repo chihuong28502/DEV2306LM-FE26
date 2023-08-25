@@ -11,22 +11,33 @@ class Control extends Component {
   handleChange = (e)=>{
     this.setState({
       name : e.target.value
-    })}
-  handleSearch =()=>{
+    })
     let {students} = this.props;
     students.map(student=>{
       if(student.studentName.toLowerCase().includes(this.state.name.toLowerCase()))
       this.state.arr.push(student)
-    console.log(this.state.arr)
+      console.log(this.state.arr)
   })
   this.setState({arr:[]})
     this.props.parentCallback(this.state.arr)
-    console.log(this.state.arr)
+  }
+  handleSearch =()=>{
+  //   let {students} = this.props;
+  //   students.map(student=>{
+  //     if(student.studentName.toLowerCase().includes(this.state.name.toLowerCase()))
+  //     this.state.arr.push(student)
+  //   console.log(this.state.arr)
+  // })
+  // this.setState({arr:[]})
+  //   this.props.parentCallback(this.state.arr)
+  //   console.log(this.state.arr)
   }
   render() {
     return (
       <div className='text-center mt-5'>
         <input type="text" 
+        onKeyUp={this.handleChange}
+        onKeyDown={this.handleChange}
           onChange={this.handleChange}/>
         <button 
           onClick={this.handleSearch}
