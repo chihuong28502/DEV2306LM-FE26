@@ -1,31 +1,17 @@
 import React, { Component } from "react";
 
 class Control extends Component {
-  constructor(props) {
-    super(props);
-    this.state ={
-      value: '',
-      arr:[],
-    }
-  }
-  handleChange = (event) => {
-    this.setState({value: event.target.value})
-    let {dataHandle} = this.props
-    dataHandle.map(student =>{
-      if(student.studentName.toLowerCase().includes(this.state.value.toLowerCase()))
-      this.state.arr.push(student)
-      console.log(this.state.arr)
-      
-      this.setState({arr:[]})
-      this.props.funcGetData(this.state.arr)
-    })
+  handleAdd = () =>{
+    this.props.onAddOrEditView(true,"Save");
   }
   render() {
     return (
       <div className="card-header">
         <div className="row">
           <div className="col-3 ">
-            <button type="button" className="btn btn-primary btn-icon-text">
+            <button 
+              onClick={this.handleAdd}
+              type="button" className="btn btn-primary btn-icon-text">
               Thêm mới sinh viên
             </button>
           </div>
@@ -34,9 +20,6 @@ class Control extends Component {
               <i className="icon-search" />
               <input
                 type="search"
-                onChange={this.handleChange}
-                onKeyDown={this.handleChange}
-                onKeyUp={this.handleChange}
                 className="form-control"
                 placeholder="Search Here"
                 title="Search here"
