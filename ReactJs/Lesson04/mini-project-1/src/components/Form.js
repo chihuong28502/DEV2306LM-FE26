@@ -71,7 +71,6 @@ class Form extends Component {
   }
   render() {
     let { renderActionname, renderStudent } = this.props;
-    console.log("form", renderStudent);
     return (
       <div className="card">
         <div className="card-body">
