@@ -65,20 +65,20 @@ class App extends Component {
           break;
         }
       }
-    }else if(this.state.actionName === "Thêm mới"){
-    let { products } = this.state;
+    } else if (this.state.actionName === "Thêm mới") {
+      let { products } = this.state;
       products.push(product);
-      this.setState({ products:products});
+      this.setState({ products: products });
     }
   };
-  handleTotal = ()=>{
-    let{products, totalQuantity} = this.state;
-    for (let i = 0; i < products.length; i++){
-      totalQuantity += products[i].quantity
+  handleTotal = () => {
+    let { products, totalQuantity } = this.state;
+    for (let i = 0; i < products.length; i++) {
+      totalQuantity += products[i].quantity;
     }
-    this.setState({totalQuantity:totalQuantity})
-    return totalQuantity
-  }
+    this.setState({ totalQuantity: totalQuantity });
+    return totalQuantity;
+  };
   handleDelete = (product) => {
     let { products } = this.state;
     products = products.filter((item) => item.productId !== product.productId);
@@ -89,12 +89,14 @@ class App extends Component {
     // xử lí + - * /
     let totalPrice = 0;
     let totalQuantity = 0;
-    for (let i = 0; i < products.length; i++){
+    let subTotal = 0;
+    for (let i = 0; i < products.length; i++) {
       totalQuantity += parseInt(products[i].quantity);
       totalPrice += parseInt(products[i].price);
+      subTotal += (parseInt(products[i].quantity) * parseInt(products[i].price));
     }
 
-    // 
+    //
     let elementForm =
       isToggle === true ? (
         <Form
@@ -109,6 +111,7 @@ class App extends Component {
       <div className="border-3 border mx-4 my-3 py-4 row d-flex justify-content-around">
         <Control onAddProduct={this.handleAddProduct} />
         <ListProducts
+          renderSubTotal={subTotal}
           renderTotalQuantity={totalQuantity}
           renderTotalPrice={totalPrice}
           onDelete={this.handleDelete}

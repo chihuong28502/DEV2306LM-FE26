@@ -20,7 +20,7 @@ class ListProducts extends Component {
     this.setState({totalSub: totalSub});
   }
   render() {
-    let { renderProducts,renderTotalQuantity,renderTotalPrice } = this.props;
+    let { renderProducts,renderTotalQuantity,renderTotalPrice,renderSubTotal } = this.props;
     let elementProduct = renderProducts.map((item, index) => {
       return <Product 
       onTotalSub = {this.handTotalSub}
@@ -46,7 +46,8 @@ class ListProducts extends Component {
           </thead>
           <tbody>
             {elementProduct}
-            <TotalPrice 
+            <TotalPrice
+            renderSubTotal = {renderSubTotal} 
             renderTotalSub = {this.state.totalSub}
             renderTotalPrice ={renderTotalPrice}
             renderTotalQuantity ={renderTotalQuantity}
