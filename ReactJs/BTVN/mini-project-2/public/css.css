@@ -1,0 +1,33 @@
+th, td {
+  padding: 10px;
+  height: fit-content;
+  
+}
+.btn.btn-icon-text{
+  margin: 4px;
+}
+tr{
+border: 1px solid #000;
+}
+table{
+  table-layout: auto;
+  width: 100%;
+  height: fit-content;
+}
+.label{
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 8px;
+  background-color: #ccc;
+  border-top-left-radius:3px ;
+  border-bottom-left-radius:3px ;
+}
+input {
+  outline: none;
+  padding: 6px;
+  padding-left: 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-top-right-radius:3px ;
+  border-bottom-right-radius:3px ;
+}
