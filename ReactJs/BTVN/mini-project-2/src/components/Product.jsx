@@ -11,19 +11,20 @@ class Product extends Component {
       subTotal: 0,
     };
   }
-  handleViewEdit = (product,actionName)=>{
-    this.props.onViewEdit(true,product,actionName);
-  }
+  handleViewEdit = (product, actionName) => {
+    this.props.onViewEdit(true, product, actionName);
+  };
 
   // delete product
-  handleDelete = ()=>{
+  handleDelete = () => {
     let { renderProduct } = this.props;
-    this.props.onDelete(renderProduct)
-  }
+    this.props.onDelete(renderProduct);
+  };
   render() {
     let { renderProduct, stt } = this.props;
-    let subTotal = parseFloat(renderProduct.price) * parseInt(renderProduct.quantity);
-
+    let totalSub = 0;
+      totalSub = parseInt(renderProduct.price) * renderProduct.quantity;
+    
     return (
       <>
         <tr className="border-1">
@@ -32,7 +33,7 @@ class Product extends Component {
           <td>{renderProduct.productName}</td>
           <td>{renderProduct.quantity}</td>
           <td>${renderProduct.price}</td>
-          <td>${subTotal}</td>
+          <td>${totalSub}</td>
           <td>
             <button
               onClick={() => this.handleViewEdit(renderProduct, "Đóng")}
@@ -48,9 +49,11 @@ class Product extends Component {
             >
               Sửa
             </button>
-            <button 
-            onClick={this.handleDelete}
-            type="button" className="btn btn-danger btn-icon-text">
+            <button
+              onClick={this.handleDelete}
+              type="button"
+              className="btn btn-danger btn-icon-text"
+            >
               Xóa
             </button>
           </td>

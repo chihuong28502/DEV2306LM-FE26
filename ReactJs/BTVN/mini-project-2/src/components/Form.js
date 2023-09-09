@@ -49,7 +49,7 @@ class Form extends Component {
     }
   };
   render() {
-    let { renderActionName,update } = this.props;
+    let { renderActionName } = this.props;
     return (
       <div className="col-5 border-1 border border px-0">
         <h3 className="bg-danger m-0 py-2 px-3">Thông tin sản phẩm</h3>
@@ -60,7 +60,6 @@ class Form extends Component {
             </label>
             <input
               value={this.state.productId}
-              update ={update}
               onChange={this.handleChange}
               className="w-100"
               type="text"

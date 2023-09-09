@@ -71,6 +71,14 @@ class App extends Component {
       this.setState({ products:products});
     }
   };
+  handleTotal = ()=>{
+    let{products, totalQuantity} = this.state;
+    for (let i = 0; i < products.length; i++){
+      totalQuantity += products[i].quantity
+    }
+    this.setState({totalQuantity:totalQuantity})
+    return totalQuantity
+  }
   handleDelete = (product) => {
     let { products } = this.state;
     products = products.filter((item) => item.productId !== product.productId);
@@ -78,6 +86,15 @@ class App extends Component {
   };
   render() {
     let { products, isToggle, product, actionName } = this.state;
+    // xử lí + - * /
+    let totalPrice = 0;
+    let totalQuantity = 0;
+    for (let i = 0; i < products.length; i++){
+      totalQuantity += parseInt(products[i].quantity);
+      totalPrice += parseInt(products[i].price);
+    }
+
+    // 
     let elementForm =
       isToggle === true ? (
         <Form
@@ -92,6 +109,8 @@ class App extends Component {
       <div className="border-3 border mx-4 my-3 py-4 row d-flex justify-content-around">
         <Control onAddProduct={this.handleAddProduct} />
         <ListProducts
+          renderTotalQuantity={totalQuantity}
+          renderTotalPrice={totalPrice}
           onDelete={this.handleDelete}
           onViewEdit={this.handleViewEdit}
           renderProducts={products}
