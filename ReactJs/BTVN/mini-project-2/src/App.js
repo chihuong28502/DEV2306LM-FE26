@@ -53,7 +53,6 @@ class App extends Component {
 
   // nhận product được thêm từ data Form
   handleSubmitForm = (toggle, product) => {
-    console.log(product);
     let { products } = this.state;
     this.setState({ isToggle: toggle });
     // sửa
@@ -63,6 +62,10 @@ class App extends Component {
           products[i] = product;
           this.setState({ isToggle: false });
           break;
+        }else{
+          // alert("ko sửa id")
+
+          console.log(product)
         }
       }
     } else if (this.state.actionName === "Thêm mới") {
@@ -70,14 +73,6 @@ class App extends Component {
       products.push(product);
       this.setState({ products: products });
     }
-  };
-  handleTotal = () => {
-    let { products, totalQuantity } = this.state;
-    for (let i = 0; i < products.length; i++) {
-      totalQuantity += products[i].quantity;
-    }
-    this.setState({ totalQuantity: totalQuantity });
-    return totalQuantity;
   };
   handleDelete = (product) => {
     let { products } = this.state;

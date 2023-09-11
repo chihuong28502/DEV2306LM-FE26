@@ -23,8 +23,7 @@ class Product extends Component {
   render() {
     let { renderProduct, stt } = this.props;
     let totalSub = 0;
-      totalSub = parseInt(renderProduct.price) * renderProduct.quantity;
-    
+      totalSub = parseInt(renderProduct.price) * parseInt(renderProduct.quantity);
     return (
       <>
         <tr className="border-1">

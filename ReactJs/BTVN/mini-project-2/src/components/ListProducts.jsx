@@ -9,8 +9,8 @@ class ListProducts extends Component {
       totalSub: 0,
     }
   }
-  handleViewEdit = (togge,product,actionName)=>{
-    this.props.onViewEdit(togge,product,actionName);
+  handleViewEdit = (togge,product,actionName,stt)=>{
+    this.props.onViewEdit(togge,product,actionName,stt);
   }
   // delete product
   handleDelete = (product)=>{

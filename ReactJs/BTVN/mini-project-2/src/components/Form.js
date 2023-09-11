@@ -28,7 +28,7 @@ class Form extends Component {
         quantity: renderProduct.quantity,
         price: renderProduct.price,
       });
-    } else {
+    } else{
       this.setState({
         productId: "",
         productName: "",

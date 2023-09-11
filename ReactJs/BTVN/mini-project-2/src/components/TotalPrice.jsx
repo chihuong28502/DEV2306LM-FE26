@@ -3,8 +3,6 @@ import React, { Component } from "react";
 class TotalPrice extends Component {
   render() {
     let {renderTotalQuantity,renderTotalPrice,renderSubTotal} = this.props;
-
-    console.log(renderSubTotal)
     return (
       <>
         <tr className="border-1">
