@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import categories from "./dataCategories";
+import InsertCategories from "./InsertCategories";
 function ListCategories() {
   // khởi tạo với list student
 
@@ -30,6 +31,7 @@ function ListCategories() {
           ))}
         </tbody>
       </table>
+      <InsertCategories data={list}/>
     </div>
   );
 }
