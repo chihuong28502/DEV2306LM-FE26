@@ -1,0 +1,1 @@
+export const LOCAL_STORAGE_NAME = "Dev2308LM-ReactJs26";

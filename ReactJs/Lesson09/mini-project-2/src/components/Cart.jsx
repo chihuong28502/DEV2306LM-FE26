@@ -2,8 +2,16 @@ import React, { Component } from "react";
 import CartItem from "./CartItem";
 import CartTotal from "./CartTotal";
 import Notify from "./Notify";
+import { connect } from "react-redux";
 class Cart extends Component {
   render() {
+    // lấy data từ props, render ra view
+    let {carts} = this.props;
+
+    console.log(carts)
+    let elementCartItem = carts.map((item, index) => {
+      return <CartItem key={index} renderCart={item} rollNo={index + 1} />;
+    });
     return (
       <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div className="panel panel-danger">
@@ -24,9 +32,10 @@ class Cart extends Component {
               </thead>
               <tbody id="my-cart-body">
                 {/* CART BODY */}
-                <CartItem />
+                {elementCartItem}
               </tbody>
-              <CartTotal />
+              <CartTotal
+              renderCarts = {carts} />
             </table>
           </div>
         </div>
@@ -35,5 +44,9 @@ class Cart extends Component {
     );
   }
 }
-
-export default Cart;
+const mapStateToProps = (state) => {
+  return {
+    carts: state.cart,
+  };
+};
+export default connect(mapStateToProps, null)(Cart);

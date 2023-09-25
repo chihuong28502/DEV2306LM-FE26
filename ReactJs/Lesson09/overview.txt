@@ -16,7 +16,7 @@
                -CartItem
                -CartTotal
                -Notify
-=========> 15'phút
+     =========> 15'phút
 5. Tổ chức cấu trúc của ứng dụng ReactJs-redux
      src:
           + components (view người dùng)
@@ -39,6 +39,7 @@
                ++ MSG_BUY_SUCCESS  :buy successfull
                ++ MSG_UPDATE_SUCCESS : update successfull
                ++ MSG_DELETE_SUCCESS : remove successfull
+               ++ LOCALSTORAGENAME: hằng số lưu trữ dữ liệu giỏ hàng
 8. xác định chức năng hệ thống (action)
      action { type:....,data: ....}
           -chức năng hiển thị thông tin sản phẩm: 
@@ -75,7 +76,47 @@
      - sử dụng Provider của react-redux
           ++ bao ngoài component <App />
                src -> index
-12. connect store với component(listProduct)
-     - sử dụng hàm connect của react-redux
-     - mapStateToProps : kế nối state trong store với props trong component
-     
+12. tạo xử lí với reducer 
+     -listProduct.js =>
+     -notify.js =>
+13. hiển thị thông báo trên componentNotify
+     -connect component => store
+     -mapStateToProps.
+14. Xây dựng xử lý cart.js (reducer) quản lý giỏ hàng - Mua hàng.
+     - khởi tạo : giỏ hàng rỗng
+     - khi người dùng mua hàng: ( Lưu trữ dữ liệu trong LocalStorage)
+          -> phát sinh 2 trạng thái:
+               + Lần đầu tiên mua hàng -> push data vào giỏ hàng
+               + Đã mua hàng (Giỏ hàng đã tồn tại): phát sinh 2 trường hợp)
+                    ++ TH1: sản phẩm chưa có trong giỏ hàng -> push vào giỏ.
+                    ++ TH2 : sản phẩm đã có trong giỏ hàng -> thực hiện cập nhật lại số lượng
+15. Bắn action mua hàng từ component (Product) -> bắn vào store
+     -Product (component):
+          ++ quản lí số lượng muua thông qua state(Controlled component)
+          ++ xử lí sự kiện mua hàng : 
+               -> bắn action(act_buy_item) -> vào reducer
+                    +++ phát sinh sự kiện click trên nút mua hàng
+                    +++ dispatch ->
+                    +++ connect to store
+16. Hiển thị sản phẩm mua từ store lên component Cart
+     - Cart:
+          ++ mapStateToProps (state) --
+          ++ connect to store
+          ++ render to cart item
+          ++ quản lí quantity thông qua state của component
+17. Xử lí thông tin CartTotal
+     -Cart :
+          -> list cart -> CartTotal
+               ++ thực hiện render có đkiện      
+18. xử lí xóa
+     -action:(index.js)
+          ++ act_delete_item(product)
+     -reducer:(cart.js)
+          + xử lí cho case: DELETE_ITEM
+               + xóa trong State và cập nhật localStorage
+19. updaate
+    -action:(index.js)
+          ++ act_update_item(product)
+     -reducer:(cart.js)
+          + xử lí cho case: UPDATE_ITEM
+               + sửa trong State và cập nhật localStorage 

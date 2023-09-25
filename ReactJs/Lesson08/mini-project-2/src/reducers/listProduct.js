@@ -39,7 +39,7 @@ const initState = [
     image: "target-leap-frog.jpg",
   },
   {
-    productId: "P006",
+    productId: "P005",
     productName: "target leap frog",
     descriptions:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dicta asperiores veniam repellat unde debitis quisquam magnam magni ut deleniti!",
