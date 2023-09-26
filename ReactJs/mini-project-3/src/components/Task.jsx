@@ -3,8 +3,9 @@ import { context } from "../hooks/useContext";
 
 function Task({ item }) {
   let { setListTasks, listTasks } = useContext(context);
+  const { setNameBtn } = useContext(context);
   const handleEdit = (e) => {
-    
+    setNameBtn("Update");
   };
   const handleDelete = () => {
     for (let i = 0; i < listTasks.length; i++) {

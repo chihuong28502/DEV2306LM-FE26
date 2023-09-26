@@ -5,6 +5,7 @@ export const context = createContext();
 const ContextProvider = ({ children }) => {
   //State
   const [listTasks, setListTasks] = useState(data);
+  const [nameBtn, setNameBtn] = useState("Submit");
 
   //function
   function GetTokenFromLocalStorage(key) {
@@ -17,6 +18,8 @@ const ContextProvider = ({ children }) => {
   const value = {
     listTasks,
     setListTasks,
+    nameBtn,
+    setNameBtn,
   };
   return <context.Provider value={value}>{children}</context.Provider>;
 };

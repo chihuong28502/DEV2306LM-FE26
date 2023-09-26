@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { context } from "../hooks/useContext";
 function Form() {
   const { setListTasks, listTasks } = useContext(context);
+  const { nameBtn, setNameBtn } = useContext(context);
   const [name, setName] = useState("");
   const [level, setLevel] = useState("");
   const handleSubmitForm = () => {
@@ -12,7 +13,6 @@ function Form() {
       ];
     });
   };
-  
 
   return (
     <div className="col-md-offset-7 col-md-4">
@@ -49,7 +49,7 @@ function Form() {
           type="button"
           className="btn btn-primary "
         >
-          Submit
+          {nameBtn}
         </button>
         <button type="button" className="btn btn-default my-2">
           Cancel
