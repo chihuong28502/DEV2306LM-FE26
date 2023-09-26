@@ -2,10 +2,15 @@ import React, { useContext } from "react";
 import { context } from "../hooks/useContext";
 
 function Task({ item }) {
-  let { setListTasks, listTasks } = useContext(context);
+  let { setListTasks, listTasks, setTask } = useContext(context);
   const { setNameBtn } = useContext(context);
   const handleEdit = (e) => {
     setNameBtn("Update");
+    for (let i = 0; i < listTasks.length; i++) {
+      if (listTasks[i].id === item.id) {
+        setTask(listTasks[i]);
+      }
+    }
   };
   const handleDelete = () => {
     for (let i = 0; i < listTasks.length; i++) {

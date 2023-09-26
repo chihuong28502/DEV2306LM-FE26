@@ -1,11 +1,8 @@
 import React, { useContext, useState } from "react";
-import data from "../data/dataTask";
 import { context } from "../hooks/useContext";
 import Task from "./Task";
 function List() {
   const { listTasks } = useContext(context);
-
-  console.log(listTasks);
   return (
     <div className="panel panel-success">
       <div className="panel-heading">List Task</div>

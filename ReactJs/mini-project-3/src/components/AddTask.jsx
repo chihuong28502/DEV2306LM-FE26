@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { context } from "../hooks/useContext";
 
 function AddTask() {
-  const { setNameBtn } = useContext(context);
+  const { setNameBtn, setLevel, setName } = useContext(context);
   const handleClickAddTask = () => {
+    setName("");
+    setLevel(0);
     setNameBtn("Add Task");
   };
   return (

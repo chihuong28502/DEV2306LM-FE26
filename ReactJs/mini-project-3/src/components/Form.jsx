@@ -2,18 +2,37 @@ import React, { useContext, useEffect, useState } from "react";
 import { context } from "../hooks/useContext";
 function Form() {
   const { setListTasks, listTasks } = useContext(context);
-  const { nameBtn, setNameBtn } = useContext(context);
-  const [name, setName] = useState("");
-  const [level, setLevel] = useState("");
-  const handleSubmitForm = () => {
-    setListTasks((prev) => {
-      return [
-        ...prev,
-        { id: listTasks.length + 1, taskName: name, level: level },
-      ];
-    });
-  };
+  const { nameBtn, task } = useContext(context);
+  const { name, setName } = useContext(context);
+  const { level, setLevel } = useContext(context);
 
+  const handleSubmitForm = () => {
+    if (nameBtn === "Submit" || nameBtn === "Add Task") {
+      setListTasks((prev) => {
+        return [
+          ...prev,
+          { id: listTasks.length + 1, taskName: name, level: level },
+        ];
+      });
+    } else if (nameBtn === "Update") {
+      for (let i = 0; i < listTasks.length; i++) {
+        if (listTasks[i].id === task.id) {
+          setName(listTasks[i].taskName);
+          listTasks[i].taskName = name;
+          setLevel(listTasks[i].level);
+          listTasks[i].level = level;
+        }
+      }
+    }
+  };
+  useEffect(() => {
+    if (nameBtn === "Update") {
+      setName(task.taskName);
+      setLevel(task.level);
+    }
+  }, [task]);
+
+  console.log(name)
   return (
     <div className="col-md-offset-7 col-md-4">
       <form action="" method="POST" className="form-inline">
@@ -22,6 +41,7 @@ function Form() {
             label
           </label>
           <input
+            value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
             className="form-control"
@@ -33,6 +53,7 @@ function Form() {
             label
           </label>
           <select
+            value={level}
             onChange={(e) => setLevel(parseInt(e.target.value))}
             name="ds"
             id="inputDs"
