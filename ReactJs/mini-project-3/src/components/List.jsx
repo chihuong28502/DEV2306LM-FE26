@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import data from "../data/dataTask";
 import { context } from "../hooks/useContext";
+import Task from "./Task";
 function List() {
   const { listTasks } = useContext(context);
 
@@ -23,27 +24,7 @@ function List() {
         </thead>
         <tbody>
           {listTasks.map((item) => (
-            <tr key={item.id}>
-              <td className="text-center">{item.id}</td>
-              <td>{item.taskName}</td>
-              <td className="text-center">
-                {parseInt(item.level) === 1 ? (
-                  <span className="label label-info">Medium</span>
-                ) : parseInt(item.level) === 2 ? (
-                  <span className="label label-danger">High</span>
-                ) : (
-                  <span className="label label-default">Small</span>
-                )}
-              </td>
-              <td>
-                <button type="button" className="btn btn-warning mx-2">
-                  Edit
-                </button>
-                <button type="button" className="btn btn-danger">
-                  Delete
-                </button>
-              </td>
-            </tr>
+            <Task key={item.id} item={item} />
           ))}
         </tbody>
       </table>

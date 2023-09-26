@@ -12,10 +12,8 @@ function Form() {
       ];
     });
   };
-  // useEffect(() => {
-  // }, [form]);
+  
 
-  console.log(name);
   return (
     <div className="col-md-offset-7 col-md-4">
       <form action="" method="POST" className="form-inline">
