@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import data from "../data/dataTask";
+import React, { useContext, useEffect, useState } from "react";
+import { context } from "../hooks/useContext";
 function Form() {
-  const [form, setForm] = useState({
-    id: 0,
-    taskName: "",
-    level: 0,
-  });
+  const { setListTasks, listTasks } = useContext(context);
   const [name, setName] = useState("");
   const [level, setLevel] = useState("");
   const handleSubmitForm = () => {
-    setForm({
-      id: data.length + 1,
-      taskName: name,
-      level: level,
+    setListTasks((prev) => {
+      return [
+        ...prev,
+        { id: listTasks.length + 1, taskName: name, level: level },
+      ];
     });
   };
-  console.log(form);
+  // useEffect(() => {
+  // }, [form]);
+
+  console.log(name);
   return (
     <div className="col-md-offset-7 col-md-4">
       <form action="" method="POST" className="form-inline">
