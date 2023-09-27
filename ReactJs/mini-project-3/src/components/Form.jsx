@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { context } from "../hooks/useContext";
 function Form() {
   let { setListTasks, listTasks } = useContext(context);
@@ -30,7 +30,8 @@ function Form() {
       setName(task.taskName);
       setLevel(task.level);
     }
-  }, [task]);
+  }, [task, setLevel, setName, nameBtn]);
+
   return (
     <div className="col-md-offset-7 col-md-4">
       <form action="" method="POST" className="form-inline">

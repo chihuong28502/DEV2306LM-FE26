@@ -1,43 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { context } from "../hooks/useContext";
 
 function Sort() {
+  const { sort, setSort } = useContext(context);
+  const handleSort = (e) => {
+    setSort(e.target.value);
+  };
   return (
     <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
       <div className="dropdown">
-        <button
-          className="btn btn-default dropdown-toggle"
-          type="button"
-          id="dropdownMenu1"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="true"
+        <select
+          className="form-control"
+          value={sort}
+          name="sortBy"
+          onChange={handleSort}
         >
-          Sort by 
-        </button>
-        <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li>
-            <a href="/#" role="button">
-              Name ASC
-            </a>
-          </li>
-          <li>
-            <a href="/#" role="button">
-              Name DESC
-            </a>
-          </li>
-          <li role="separator" className="divider" />
-          <li>
-            <a href="/#" role="button">
-              Level ASC
-            </a>
-          </li>
-          <li>
-            <a href="/#" role="button">
-              Level DESC
-            </a>
-          </li>
-        </ul>
-        <span className="label label-success label-medium">NAME - DESC</span>
+          <option value="">Sort by</option>
+          <option value="name-ASC">Name ASC</option>
+          <option value="name-DESC">Name DESC</option>
+          <option value="level-ASC"> Level ASC</option>
+          <option value="level-DESC"> Level DESC</option>
+        </select>
       </div>
     </div>
   );

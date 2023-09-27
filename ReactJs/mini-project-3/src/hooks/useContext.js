@@ -9,13 +9,16 @@ const ContextProvider = ({ children }) => {
   const [listTasks, setListTasks] = useState(data);
   const [task, setTask] = useState();
   const [nameBtn, setNameBtn] = useState("Submit");
-  //function
-  function GetTokenFromLocalStorage(key) {
-    return localStorage.getItem(key);
-  }
-  function SaveTokenToLocalStorage(title, token) {
-    localStorage.setItem(title, token);
-  }
+  const [getSearch, setGetSearch] = useState("");
+  const [sort, setSort] = useState("");
+
+  // //function
+  // function GetTokenFromLocalStorage(key) {
+  //   return localStorage.getItem(key);
+  // }
+  // function SaveTokenToLocalStorage(title, value) {
+  //   localStorage.setItem(title, value);
+  // }
   //Value
   const value = {
     listTasks,
@@ -28,6 +31,10 @@ const ContextProvider = ({ children }) => {
     setName,
     level,
     setLevel,
+    getSearch,
+    setGetSearch,
+    sort,
+    setSort,
   };
   return <context.Provider value={value}>{children}</context.Provider>;
 };
