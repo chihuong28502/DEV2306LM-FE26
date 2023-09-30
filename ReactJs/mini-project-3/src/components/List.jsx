@@ -4,7 +4,8 @@ import Task from "./Task";
 function List() {
   const { sort, getSearch } = useContext(context);
   let { listTasks } = useContext(context);
-  console.log("getSearch: ", getSearch);
+
+  console.log("123");
   // search
   if (getSearch !== "") {
     listTasks = listTasks.filter((x) =>
@@ -12,7 +13,7 @@ function List() {
     );
   }
   // sort
-  if (sort !== "") {
+  if (sort !== "" || sort !== undefined) {
     let arr = sort.split("-");
     if (arr[0] === "name") {
       if (arr[1] === "ASC") {

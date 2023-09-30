@@ -8,6 +8,7 @@ function Form() {
   const handleSubmitForm = () => {
     if (nameBtn === "Submit" || nameBtn === "Add Task") {
       setListTasks((prev) => {
+        // add
         return [
           ...prev,
           { id: listTasks.length + 1, taskName: name, level: level },
@@ -15,6 +16,7 @@ function Form() {
       });
       setName("");
     } else if (nameBtn === "Update") {
+      // edit
       for (let i = 0; i < listTasks.length; i++) {
         if (listTasks[i].id === task.id) {
           listTasks[i].taskName = name;
@@ -26,6 +28,7 @@ function Form() {
     }
   };
   useEffect(() => {
+    // set name cho o input
     if (nameBtn === "Update") {
       setName(task.taskName);
       setLevel(task.level);
