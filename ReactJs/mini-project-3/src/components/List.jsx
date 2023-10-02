@@ -5,7 +5,6 @@ function List() {
   const { sort, getSearch } = useContext(context);
   let { listTasks } = useContext(context);
 
-  console.log("123");
   // search
   if (getSearch !== "") {
     listTasks = listTasks.filter((x) =>
@@ -36,6 +35,8 @@ function List() {
         });
       }
     }
+  }else{
+    return listTasks;
   }
   return (
     <div className="panel panel-success">

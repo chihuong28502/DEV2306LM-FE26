@@ -3,6 +3,7 @@ import { context } from "../hooks/useContext";
 
 function Sort() {
   const { sort, setSort } = useContext(context);
+  
   const handleSort = (e) => {
     setSort(e.target.value);
   };

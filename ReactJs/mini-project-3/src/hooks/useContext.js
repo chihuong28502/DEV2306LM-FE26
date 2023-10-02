@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import data from "../data/dataTask";
 export const context = createContext();
 
@@ -6,7 +6,18 @@ const ContextProvider = ({ children }) => {
   //State
   const [name, setName] = useState("");
   const [level, setLevel] = useState("");
-  const [listTasks, setListTasks] = useState(data);
+  const [listTasks, setListTasks] = useState(() => {
+    const lists = JSON.parse(localStorage.getItem("DEV2308LM-REACTJS26"));
+    if (lists === null || lists.length === 0) {
+      return data;
+    }
+    return data;
+  });
+  useEffect(() => {
+    // lưu vào LcStorage
+    localStorage.setItem("DEV2308LM-REACTJS26", JSON.stringify(listTasks));
+    setListTasks(listTasks);
+  }, [listTasks]);
   const [task, setTask] = useState();
   const [nameBtn, setNameBtn] = useState("Submit");
   const [getSearch, setGetSearch] = useState("");

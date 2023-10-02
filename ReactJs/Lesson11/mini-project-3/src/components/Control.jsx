@@ -1,6 +1,10 @@
 import React from "react";
 
-function Control() {
+function Control({ onAddTask }) {
+  // xử lí thêm mới
+  const handleAdd = () => {
+    onAddTask(true, "Save", null);
+  };
   return (
     <div className="row">
       {/* SEARCH : START */}
@@ -34,17 +38,25 @@ function Control() {
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li>
-              <a role="button">Name ASC</a>
+              <a href="/#" role="button">
+                Name ASC
+              </a>
             </li>
             <li>
-              <a role="button">Name DESC</a>
+              <a href="/#" role="button">
+                Name DESC
+              </a>
             </li>
             <li role="separator" className="divider" />
             <li>
-              <a role="button">Level ASC</a>
+              <a href="/#" role="button">
+                Level ASC
+              </a>
             </li>
             <li>
-              <a role="button">Level DESC</a>
+              <a href="/#" role="button">
+                Level DESC
+              </a>
             </li>
           </ul>
           <span className="label label-success label-medium">NAME - DESC</span>
@@ -53,7 +65,11 @@ function Control() {
       {/* SORT : END */}
       {/* ADD : START */}
       <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-        <button type="button" className="btn btn-info btn-block">
+        <button
+          onClick={handleAdd}
+          type="button"
+          className="btn btn-info btn-block"
+        >
           Add Task
         </button>
       </div>

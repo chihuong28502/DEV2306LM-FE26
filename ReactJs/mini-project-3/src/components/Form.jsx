@@ -8,7 +8,7 @@ function Form() {
   const handleSubmitForm = () => {
     if (nameBtn === "Submit" || nameBtn === "Add Task") {
       setListTasks((prev) => {
-        // add
+        // addz
         return [
           ...prev,
           { id: listTasks.length + 1, taskName: name, level: level },
