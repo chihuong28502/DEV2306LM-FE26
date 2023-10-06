@@ -93,16 +93,70 @@ function App() {
       }
     }
     setTasks([...tasks]);
-
-    console.log(tasks);
   };
+  const [valueSort, setValueSort] = useState("");
+  const handleSort = (sort) => {
+    setValueSort(sort);
+    if (sort !== "" || sort !== undefined) {
+      let arr = sort.split("-");
+      if (arr[0] === "name") {
+        if (arr[1] === "ASC") {
+          tasks.sort((x, y) => {
+            return x.taskName.localeCompare(y.taskName);
+          });
+        } else {
+          tasks.sort((x, y) => {
+            return y.taskName.localeCompare(x.taskName);
+          });
+        }
+      } else {
+        if (arr[1] === "ASC") {
+          tasks.sort((x, y) => {
+            return x.level - y.level;
+          });
+        } else {
+          tasks.sort((x, y) => {
+            return y.level - x.level;
+          });
+        }
+      }
+    }
+  };
+  const [taskShow, setTaskShow] = useState(tasks);
+  const [search, setSearch] = useState("");
+  const handleSearch = (valueSearch) => {
+    setSearch(valueSearch);
+    let listTasks = tasks;
+    if (valueSearch !== "") {
+      listTasks = listTasks.filter((x) =>
+        x.taskName
+          .toLocaleLowerCase()
+          .trim()
+          .includes(valueSearch.toLocaleLowerCase().trim())
+      );
+      setTaskShow(listTasks);
+    } else {
+      setTaskShow(tasks);
+    }
+  };
+
+  useEffect(() => {
+    setTaskShow(tasks);
+  }, [tasks]);
+  useEffect(() => {
+    setTaskShow(tasks);
+  }, [valueSort]);
   return (
     <div className="container">
       {/* TITLE : START */}
       <Title />
       {/* TITLE : END */}
       {/* CONTROL (SEARCH + SORT + ADD) : START */}
-      <Control onAddTask={handleAddOrEditTask} />
+      <Control
+        onSearch={handleSearch}
+        onSort={handleSort}
+        onAddTask={handleAddOrEditTask}
+      />
       {/* CONTROL (SEARCH + SORT + ADD) : END */}
       {/* FORM : START */}
       {elementForm}
@@ -111,7 +165,7 @@ function App() {
       <ListTask
         onDelete={handleDelete}
         onEdit={handleAddOrEditTask}
-        renderTasks={tasks}
+        renderTasks={taskShow}
       />
     </div>
   );

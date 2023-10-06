@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Control({ onAddTask }) {
+function Control({onSearch, onAddTask, onSort }) {
+  //state control value sort
+  const [sort, setSort] = useState("");
+  const handleSort = (e) => {
+    let value = e.target.value;
+    setSort(value);
+    onSort(value);
+  };
+
   // xử lí thêm mới
   const handleAdd = () => {
     onAddTask(true, "Save", null);
+  };
+  const [valueSearch, setValueSearch] = useState("");
+  const handleSearch = () => {
+    onSearch(valueSearch);
   };
   return (
     <div className="row">
@@ -11,12 +23,17 @@ function Control({ onAddTask }) {
       <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
         <div className="input-group">
           <input
+            onChange={(e) => setValueSearch(e.target.value)}
             type="text"
             className="form-control"
             placeholder="Search for..."
           />
           <span className="input-group-btn">
-            <button className="btn btn-info" type="button">
+            <button
+              onClick={handleSearch}
+              className="btn btn-info"
+              type="button"
+            >
               Go!
             </button>
           </span>
@@ -26,40 +43,13 @@ function Control({ onAddTask }) {
       {/* SORT : START */}
       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <div className="dropdown">
-          <button
-            className="btn btn-default dropdown-toggle"
-            type="button"
-            id="dropdownMenu1"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="true"
-          >
-            Sort by <span className="caret" />
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li>
-              <a href="/#" role="button">
-                Name ASC
-              </a>
-            </li>
-            <li>
-              <a href="/#" role="button">
-                Name DESC
-              </a>
-            </li>
-            <li role="separator" className="divider" />
-            <li>
-              <a href="/#" role="button">
-                Level ASC
-              </a>
-            </li>
-            <li>
-              <a href="/#" role="button">
-                Level DESC
-              </a>
-            </li>
-          </ul>
-          <span className="label label-success label-medium">NAME - DESC</span>
+          <select className="form-control" value={sort} onChange={handleSort}>
+            <option value="">Sort by</option>
+            <option value="name-ASC">Name ASC</option>
+            <option value="name-DESC">Name DESC</option>
+            <option value="level-ASC"> Level ASC</option>
+            <option value="level-DESC"> Level DESC</option>
+          </select>
         </div>
       </div>
       {/* SORT : END */}

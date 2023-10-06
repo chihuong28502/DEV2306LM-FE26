@@ -8,7 +8,6 @@ function Form({ onSubmit, onCancel, actionName, renderTask, renderTasks }) {
 
   // state in form
   const [task, setTask] = useState(renderTask);
-  const [saveUpdate, setActionName] = useState(actionName);
   // change in control => update state
   const handleChange = (event) => {
     let name = event.target.name;
