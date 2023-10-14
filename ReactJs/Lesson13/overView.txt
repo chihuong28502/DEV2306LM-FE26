@@ -1,0 +1,29 @@
+API
+I. Xây dựng các mock API
+  1. Tạo mock API local với JSON Sever
+    - Tạo thư mục, và cài đặt npm cho thư mục
+      npm init --yes
+    - Cài đặt JSON Sever
+      npm istall -g json-server
+    - Tạo file JSON để lưu trữ dữ liệu
+      db.json
+      ++ Tạo các mock data
+    - Start server JSON
+      + Tạo start trong script của package.json
+        "start":"json-server -- watch db.json --port 3001"
+      + npm start
+  2. Mock API online với https://mockapi.io
+    - đăng ký tài khoản
+    - Tạo mới project
+  3. API cung cấp từ devmaster: apixm.devmaster.vn
+
+II, ReactJs project -> làm việc với API
+  CRUD:
+    + Tạo ứng dụng reactJS 
+    + Cài package axios cho ứng dụng 
+      npm install --save axios
+    + CRUD:
+      - Read(fetch all ) - GET
+        + call api qua axios 
+        + hiển thị dữ liệu
+        + 

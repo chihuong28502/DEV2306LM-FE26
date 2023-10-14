@@ -1,0 +1,22 @@
+{
+  "users":[
+    {
+      "id":1,"userName":"Chí Hưởng1","password":"123451"
+    },{
+      "id":2,"userName":"Chí Hưởng2","password":"123452"
+    },{
+      "id":3,"userName":"Chí Hưởng3","password":"123452"
+    }
+  ],
+  "students":[
+    {
+      "studentId":"ST001","studentName":"nv A1","age":221
+    },
+    {
+      "studentId":"ST002","studentName":"nv A2","age":222
+    },
+    {
+      "studentId":"ST003","studentName":"nv A3","age":223
+    }
+  ]
+}

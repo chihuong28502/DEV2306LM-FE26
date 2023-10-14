@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { context } from "../hooks/useContext";
 import Task from "./Task";
 function List() {
@@ -7,37 +7,43 @@ function List() {
 
   // search
   if (getSearch !== "") {
+
     listTasks = listTasks.filter((x) =>
       x.taskName.toLocaleLowerCase().includes(getSearch.toLocaleLowerCase())
     );
   }
+
   // sort
-  if (sort !== "" || sort !== undefined) {
-    let arr = sort.split("-");
-    if (arr[0] === "name") {
-      if (arr[1] === "ASC") {
-        listTasks.sort((x, y) => {
-          return x.taskName.localeCompare(y.taskName);
-        });
+
+  useEffect(() => {
+    console.log(sort)
+    if (sort !== "" || sort !== undefined) {
+      let arr = sort.split("-");
+      if (arr[0] === "name") {
+        if (arr[1] === "ASC") {
+          listTasks.sort((x, y) => {
+            return x.taskName.localeCompare(y.taskName);
+          });
+        } else {
+          listTasks.sort((x, y) => {
+            return y.taskName.localeCompare(x.taskName);
+          });
+        }
       } else {
-        listTasks.sort((x, y) => {
-          return y.taskName.localeCompare(x.taskName);
-        });
+        if (arr[1] === "ASC") {
+          listTasks.sort((x, y) => {
+            return x.level - y.level;
+          });
+        } else {
+          listTasks.sort((x, y) => {
+            return y.level - x.level;
+          });
+        }
       }
     } else {
-      if (arr[1] === "ASC") {
-        listTasks.sort((x, y) => {
-          return x.level - y.level;
-        });
-      } else {
-        listTasks.sort((x, y) => {
-          return y.level - x.level;
-        });
-      }
+      return listTasks;
     }
-  }else{
-    return listTasks;
-  }
+  }, [sort]);
   return (
     <div className="panel panel-success">
       <div className="panel-heading">List Task</div>
